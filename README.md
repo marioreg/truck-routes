@@ -19,8 +19,4 @@
    * Google Maps
    * Truck Routing API (Microsoft)
    
-## URL:
-
-   https://marioreg.github.io/truck-routes
-
 
