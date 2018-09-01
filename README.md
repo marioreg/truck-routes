@@ -6,5 +6,5 @@ This project adds value to truck companies that need to save time and resources 
 
 * Item 1
 * Item 2
- * Item 2a
- * Item 2b
+    * Item 2a
+    * Item 2b
