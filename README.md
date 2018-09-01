@@ -9,12 +9,9 @@
 
 ## Benefits:
 
-* f
-* 3
-* f
-* 3
-* f
-* 3
+* Time saving for truck companies by helping them create and select the best routs accorind to their needs
+* Visual representation of the routes with Google maps 
+* Very simple to use
 
 
 ## APIs used:
