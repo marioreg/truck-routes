@@ -23,7 +23,8 @@
 ## Wireframe
 
 1. Homepage
-    ![HomePage](marioreg.github.com/truck-routes/img/tasks.png)
+    ![tasks](https://user-images.githubusercontent.com/33184843/44948720-4cf5df80-ade8-11e8-8334-28e155fc7bc4.png)
+
 
 2. About us
 3. What we do
