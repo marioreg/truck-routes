@@ -2,7 +2,7 @@
 
 ## Project title:
 
-   ## Truck Routes
+  Truck Routes
 
 ## Project Description:
 
@@ -10,6 +10,13 @@
   This project adds value to truck companies that need to save time and resources when selecting the best rout for cargo deliveries.
 
 
+## APIs used
 
+   * Google Maps
+   * Truck Routing API (Microsoft)
+   
+## URL:
+
+   https://marioreg.github.io/truck-routes
 
 
