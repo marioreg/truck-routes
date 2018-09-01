@@ -1,5 +1,3 @@
-# Truck routes
-
 ## Project title:
 
  # Truck Routes
