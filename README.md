@@ -18,5 +18,23 @@
 
    * Google Maps
    * Truck Routing API (Microsoft)
-   
+
+
+## Wireframe
+
+1. Homepage
+    ![HomePage](marioreg.github.com/repository/img/tasks.png)
+
+2. About us
+3. What we do
+4. Sign up
+5. Sign in
+6. Control Panel
+7. Route View
+
+## Project management
+
+The full list of tasks can be located in https://github.com/marioreg/truck-routes/projects/1
+
+
 
