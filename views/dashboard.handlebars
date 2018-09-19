@@ -1,0 +1,160 @@
+<body class="page-about">
+  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+  <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.8">
+
+    <!-- ======== @Region: #navigation ======== -->
+    <div id="navigation" class="wrapper">
+      <!--Header & navbar-branding region-->
+      <div class="header">
+        <div class="header-inner container">
+          <div class="row">
+            <div class="col-md-8">
+              <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
+              <a class="navbar-brand" href="/" title="Home">
+                <h1 class="hidden">
+                  <img src="img/logo.png" alt="Flexor Logo">
+                  Fleet Services
+                </h1>
+              </a>
+              <div class="navbar-slogan">
+                Truck Routes made easy
+                <br>
+              </div>
+            </div>
+            <!--header rightside-->
+            <div class="col-md-4">
+              <!--user menu-->
+              <ul class="list-inline user-menu pull-right">
+
+                <li class="hidden-xs"><i class="fa fa-sign-out text-primary"></i> <a href="/signout" class="text-uppercase">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #content ======== -->
+  <h4 class="block-title">
+  </h4>
+
+  <br>
+  <div class="row">
+    <div class="col-xs-2">
+      <ul class="nav nav-tabs nav-tabs-left">
+        <li class="active"><a href="#vtab1" data-toggle="tab">Find Route</a></li>
+        <li><a href="#vtab2" data-toggle="tab">Previous searches</a></li>
+        <li><a href="#vtab3" data-toggle="tab">My Profile</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-9">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="vtab1">
+          <h2>Please Fill out your requirements</h2>
+          <div class="form">
+            <div id="errors"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <form action="">
+                <label for="start">Start</label>
+                <input type="text" id="start">
+                <br>
+                <label for="destination">Destination</label>
+                <input type="text" id="destination">
+                <br>
+                <p>Avoid:</p>
+                <input type="checkbox" id="highways" name="highways" value="highways"> Highways
+                <br>
+                <input type="checkbox" id="tolls" name="tolls" value="tolls"> Tolls
+                <br>
+                <input type="checkbox" id="minimizeHighways" name="minimizeHighways" value="minimizeHighways"> Minimize
+                Highways
+                <br>
+                <input type="checkbox" id="minimizeTolls" name="minimizeTolls" value="minimizeTolls"> Minimize Tolls
+                <br>
+                <input type="checkbox" id="ferry" name="ferry" value="ferry"> Ferry
+                <br>
+                <label for="vehicleHeight">Vehicle Height:</label>
+                <input type="text" id="vehicleHeight" placeholder="in meters">
+                <br>
+                <label for="vehicleWidth">Vehicle Width:</label>
+                <input type="text" id="vehicleWidth" placeholder="in meters">
+                <br>
+                <label for="vehicleLength">Vehicle Length:</label>
+                <input type="text" id="vehicleLength" placeholder="in meters">
+                <br>
+                <label for="vehicleWeight">Vehicle Weigth:</label>
+                <input type="text" id="vehicleWeight" placeholder="in kilograms">
+                <br>
+                <label for="vehicleAxles">Number of vehicle Axles:</label>
+                <input type="text" id="vehicleAxles" placeholder="number">
+                <br>
+                <label for="vehicleTrailers">Number of trailers:</label>
+                <input type="text" id="vehicleTrailers" placeholder="number">
+                <br>
+                <label for="vehicleSemi">Pulling a semi?</label>
+                <select id="vehicleSemi">
+                  <option value=""></option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+                <br>
+                <label>Transporting hazardous materials?</label>
+                <br>
+                <input type="checkbox" id="Combustible" name="Combustible" value="Combustible"> Combustible
+                <br>
+                <input type="checkbox" id="Corrosive" name="Corrosive" value="Corrosive"> Corrosive
+                <br>
+                <input type="checkbox" id="Explosive" name="Explosive" value="Explosive"> Explosive
+                <br>
+                <input type="checkbox" id="Flammable" name="Flammable" value="Flammable"> Flammable
+                <br>
+                <input type="checkbox" id="FlammableSolid" name="FlammableSolid" value="FlammableSolid"> Flammable
+                Solid
+                <br>
+                <input type="checkbox" id="Gas" name="Gas" value="Gas"> Gas
+                <br>
+                <input type="checkbox" id="Organic" name="Organic" value="Organic"> Organic
+                <br>
+                <input type="checkbox" id="Poison" name="Poison" value="Poison"> Poison
+                <br>
+                <input type="checkbox" id="PoisonousInhalation" name="PoisonousInhalation" value="PoisonousInhalation">
+                Poisonous Inhalation
+                <br>
+                <input type="checkbox" id="Radioactive" name="Radioactive" value="Radioactive"> Radioactive
+                <br>
+                <input type="checkbox" id="None" name="None" value="None"> None
+                <br>
+                <input id="find-route" type="submit" value="Submit">
+              </form>
+          </div>
+          <br>
+          <br>
+        </div>
+        <div class="tab-pane fade" id="vtab2">
+          <p>Previous searches</p>
+        </div>
+        <div class="tab-pane fade" id="vtab3">
+          <h2>Name: </h2>
+          <h3>E mail: </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="googlemap"></div>
+  <!-- ======== @Region: #footer ======== -->
+  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="img/bg_footer-map.png"
+    data-stellar-background-ratio="0.4">
+    <div class="container">
+      <a href="#top" class="scrolltop">Top</a>
+      <div class="col-md-7">
+        <p>Copyright © Fleet Services</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
