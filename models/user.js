@@ -1,18 +1,24 @@
-module.exports = function (sequelize, DataTypes) {
+var mongoose = require('mongoose');
 
-	var User = sequelize.define('User', {
-		id: { autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER },
-		name: { type: DataTypes.STRING, notEmpty: true },
-		username: { type: DataTypes.STRING, notEmpty: true },
-		email: { type: DataTypes.STRING, validate: { isEmail: true } },
-		password: { type: DataTypes.STRING, allowNull: false }
-	});
+// User Schema
+var UserSchema = mongoose.Schema({
+	username: {
+		type: String,
+		index:true
+	},
+	password: {
+		type: String
+	},
+	email: {
+		type: String
+	},
+	name: {
+		type: String
+	}
+});
 
+// This creates our model from the above schema, using mongoose's model method
+var User = mongoose.model('User', UserSchema);
 
-
-	return User;
-
-};
-
-
-
+// Export the User model
+module.exports = User;

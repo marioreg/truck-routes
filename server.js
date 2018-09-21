@@ -1,52 +1,55 @@
-var db = require("./models");
-var exphbs = require("express-handlebars");
-var bodyParser = require("body-parser");
-var express = require("express");
-var cookieParser = require('cookie-parser');
+var express = require('express');
 var app = express();
-var flash = require('connect-flash');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var exphbs = require('express-handlebars');
 var session = require('express-session');
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-
+var mongoose = require('mongoose');
 
 var PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+var router = express.Router();
+require("./routes/Routes")(router);
+
+//public
+app.use(express.static(__dirname + "/public"));
+
+// BodyParser Middleware
 app.use(bodyParser.json());
-
 app.use(cookieParser());
-app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// Express Session
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true
+}));
 
-require("./routes/Routes")(app);
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(router);
 
-var syncOptions = { force: false };
-
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
-
-// Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function () {
-  app.listen(PORT, function () {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
+app.use(function(req, res, next){
+  res.locals.user = req.user || null;
+  next();
 });
 
-module.exports = app;
+//For Handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fleetdb";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+
+// Listen on the port
+app.listen(PORT, function () {
+  console.log("Listening on port: " + PORT);
+});

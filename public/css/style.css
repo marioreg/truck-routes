@@ -1811,7 +1811,7 @@ a.btn-hh-trigger.target-open:after {
   display: block;
   text-shadow: none;
   line-height: 1;
-  background: url(../img/logo.png) left top no-repeat;
+  background: url(../img/fleet-logo.png) left top no-repeat;
   height: 30px;
   width: 145px;
 }

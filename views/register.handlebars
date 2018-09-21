@@ -25,7 +25,7 @@
               </h3>
             </div>
             <div class="panel-body">
-              <form method="post" accept-charset="UTF-8" role="form" action= "/users/register">
+              <form method="post" accept-charset="UTF-8" role="form" action="/register">
                 <fieldset>
 
                   <div class="form-group">
@@ -56,24 +56,32 @@
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    <div class="input-group input-group-lg">
-                      <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
-                      <input type="password" class="form-control" name="password2" placeholder="Confirm Password">
-                    </div>
-                  </div>
-
 
                   <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Me Up">
                 </fieldset>
+
+
+                {{#each errors}}
+                <ul>
+                  <li>
+                    {{this.msg}}
+                  </li>
+                </ul>
+                {{/each}}
+
+                <div class="alert alert-sucess">
+                  <h4>{{message}}</h4>
+                </div>
+
               </form>
-              <p class="m-b-0 m-t">Already signed up? <a href="/signin">Login here</a>.</p>
+              <p class="m-b-0 m-t">Already signed up? <a href="/login">Login here</a>.</p>
 
             </div>
           </div>
         </div>
       </div>
       <!-- /row -->
+
     </div>
   </div>
 </body>
