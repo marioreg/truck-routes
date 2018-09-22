@@ -51,7 +51,7 @@
         <li><a href="#vtab3" data-toggle="tab">My Profile</a></li>
       </ul>
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-7">
       <div class="tab-content">
         <div class="tab-pane fade in active" id="vtab1">
           <h2>Please Fill out your requirements</h2>
@@ -61,40 +61,67 @@
               <form action="">
                 <label for="start">Start</label>
                 <input type="text" id="start">
-                <br>
+
                 <label for="destination">Destination</label>
                 <input type="text" id="destination">
                 <br>
+                <br>
                 <p>Avoid:</p>
                 <input type="checkbox" id="highways" name="highways" value="highways"> Highways
-                <br>
+
                 <input type="checkbox" id="tolls" name="tolls" value="tolls"> Tolls
-                <br>
+
                 <input type="checkbox" id="minimizeHighways" name="minimizeHighways" value="minimizeHighways"> Minimize
                 Highways
-                <br>
+
                 <input type="checkbox" id="minimizeTolls" name="minimizeTolls" value="minimizeTolls"> Minimize Tolls
-                <br>
+
                 <input type="checkbox" id="ferry" name="ferry" value="ferry"> Ferry
                 <br>
-                <label for="vehicleHeight">Vehicle Height:</label>
-                <input type="text" id="vehicleHeight" placeholder="in meters">
                 <br>
+                <label for="vehicleHeight">Vehicle Height:</label>
+                <select type="text" id="vehicleHeight" placeholder="in meters"> meters
+                  <option></option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
                 <label for="vehicleWidth">Vehicle Width:</label>
-                <input type="text" id="vehicleWidth" placeholder="in meters">
+                <select type="text" id="vehicleWidth" placeholder="in meters"> meters
+                  <option></option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
                 <br>
                 <label for="vehicleLength">Vehicle Length:</label>
-                <input type="text" id="vehicleLength" placeholder="in meters">
+                <input type="text" id="vehicleLength" placeholder="in meters"> meters
+
                 <br>
                 <label for="vehicleWeight">Vehicle Weigth:</label>
-                <input type="text" id="vehicleWeight" placeholder="in kilograms">
+                <input type="text" id="vehicleWeight" placeholder="in kilograms"> meters
                 <br>
                 <label for="vehicleAxles">Number of vehicle Axles:</label>
-                <input type="text" id="vehicleAxles" placeholder="number">
-                <br>
+                <select type="text" id="vehicleAxles" placeholder="number">
+                  <option></option>
+
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
                 <label for="vehicleTrailers">Number of trailers:</label>
-                <input type="text" id="vehicleTrailers" placeholder="number">
-                <br>
+                <select type="text" id="vehicleTrailers" placeholder="number">
+                  <option></option>
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+
                 <label for="vehicleSemi">Pulling a semi?</label>
                 <select id="vehicleSemi">
                   <option value=""></option>
@@ -128,23 +155,40 @@
                 <br>
                 <input type="checkbox" id="None" name="None" value="None"> None
                 <br>
-                <input id="find-route" type="submit" value="Submit">
+                <button type="submit" id="find-route" class="btn btn-info">Find Route</button>
               </form>
           </div>
           <br>
           <br>
-          <div id="map"></div>
+
         </div>
         <div class="tab-pane fade" id="vtab2">
           <p>Previous searches</p>
+
         </div>
         <div class="tab-pane fade" id="vtab3">
 
           <h3>Name: {{name}}</h3>
           <h3>Username: {{username}} </h3>
           <h3>E mail Address: {{email}} </h3>
+          <p hidden>{{id}}</p>
         </div>
       </div>
+    </div>
+    <div class="col-2">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div id="map"></div>
     </div>
   </div>
 

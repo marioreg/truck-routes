@@ -40,6 +40,7 @@ module.exports = function (router) {
       return res.render("register", { errors: errores });
 
     } else {
+      
       // no errors
       //store name, email and password in variables
       var name = req.body.name;
@@ -116,8 +117,9 @@ module.exports = function (router) {
     var name = req.user.name;
     var email = req.user.email;
     var username = req.user.username;
+    var id = req.user.id;
     console.log(name, username, email);
-    res.render("dashboard", { name: name, email: email, username: username });
+    res.render("dashboard", { name: name, email: email, username: username, id:id });
   });
 
   //function that ensures user is authenticated before rendering route

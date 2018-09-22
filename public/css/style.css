@@ -363,7 +363,7 @@
 }
 .block.block-bg-noise,
 .block.block-bg-noise:after {
-  background: #ededed url(../img/bg_noise-bg.png) left top repeat;
+  /*background: #ededed url(../img/bg_noise-bg.png) left top repeat;*/
 }
 .block.block-bg-grey,
 .block.block-bg-grey:after {

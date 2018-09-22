@@ -196,7 +196,7 @@ $("#find-route").on("click", function(event) {
     console.log(typeof str);
 
 
-    $("<a href='" + str + "' data-role='button' target='_blank'><button>Go to my map</button></a>").button().appendTo('#map');
+    $("<a href='" + str + "' role='button' class='btn btn-lg btn-success' target='_blank'>Go to my map</a>").button().appendTo('#map');
 
 
   });
